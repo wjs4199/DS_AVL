@@ -77,7 +77,20 @@ else * node is found *
     shorter = true 
   else /* two subtrees  
     find the largest node in left subtree : L_largest 
-    copy L_largest to delete node AVL_Delete(root->left, L_largest, shorter) if (shorter) RightBalance(root, shorter) 
-
+    copy L_largest to delete node 
+    AVL_Delete(root->left, L_largest, shorter) 
+    if (shorter) RightBalance(root, shorter) 
+Alg RightBalance(root, shorter) 
+if (root->bf == 1)  
+  root->bf = 0 
+  shorter = true 
+else if (root->bf == 0) 
+  root->bf = -1 
+else // tree was right-high already – RR or RL case 
+  rightTree = root->right 
+  if (rightTree->bf == 1) // 
+    RL case RL rebalancing 
+  else // RR case 
+    RR rebalancing */
  
  
