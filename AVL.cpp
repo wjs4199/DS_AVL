@@ -60,5 +60,24 @@ void left_rotation(tree_node **parent, int *unbalanced) {
  *unbalanced = FALSE;
 }
 
+/*Alg AVL_Delete(root, deleteKey, shorter) 
+if tree is null can’t delete the node 
+else if (deleteKey < root->key) 
+  AVL_Delete(root->left, deleteKey, shorter) 
+    if (shorter) RightBalance(root, shorter) 
+else if (deleteKey > root->key) 
+  AVL_Delete(root->right, deleteKey, shorter) 
+  if (shorter) LeftBalance(root, shorter) 
+else * node is found *
+  if there is no left subtree 
+    delete the node & attach its child pointer to its parent 
+    shorter = true 
+  else if there is no right subtree 
+    delete the node & attach its child pointer to its parent 
+    shorter = true 
+  else /* two subtrees  
+    find the largest node in left subtree : L_largest 
+    copy L_largest to delete node AVL_Delete(root->left, L_largest, shorter) if (shorter) RightBalance(root, shorter) 
+
  
  
